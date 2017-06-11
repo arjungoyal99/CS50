@@ -1,25 +1,37 @@
 #include <stdio.h>
 #include <cs50.h>
 
+float getchange(void);
+void printcoin(float x);
+
 int main(void)
 
 {
-    float f;
+    float x;
     do
     {
-        printf("how much change is owed\n");
-        f=get_float();
+        x=getchange();
     }
-    while (f<0);
+    while (x<0);
     {
-        f=f*100;
-        int z=f;
-        int a= z/25;
-        int b=z%25;
-        int c=b/10;
-        int d=b%10;
-        int e=d/5;
-        int g=d%5;
-        printf("%i\n",a+c+e+g);
+        printcoin(x);
     }
+}
+float getchange(void)
+{
+    printf("how much change is owed\n");
+    float f=get_float();
+    return f;
+}
+void printcoin(float x)
+{
+    x=x*100;
+    int z=x;
+    int a= z/25;
+    int b=z%25;
+    int c=b/10;
+    int d=b%10;
+    int e=d/5;
+    int g=d%5;
+    printf("%i\n",a+c+e+g); 
 }
