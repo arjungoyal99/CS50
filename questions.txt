@@ -1,0 +1,4 @@
+0. The framework can allow any square matrix of order greater than equal to three but less than equal to nine
+1. The data structure used to implement the game's board is 2D arrays
+2. The name of the function used to greet the player is greet.
+3. The functions which need to be implemented are init, draw, move, won
