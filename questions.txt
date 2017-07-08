@@ -1,0 +1,12 @@
+1.  Stdint.h is a header file which provide a set of tpyedefs that specify exact-width integer types.
+2.  It makes clear that we intent to use a data in a specific way.
+3.  BYTE is one byte; DWORD is 4 bytes; LONG is 4 bytes; WORD is two bytes.
+4.  The first two bytes of a bmp must contain a word BM.
+5.  bfSize is the size of the bmp file. While the biSize is the size of the structure.
+6.  If biHeight is positive it means the image is bottom up whereas if the biHeight is negative it means the image is bottom down.
+7.  biBitCount specifies the BMP color depth.
+8.  fopen might return NULL if the doesn't exist.
+9.  fread's third arguement is always 1 because we want to iterate over each pixel one at a time.
+10. int padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4 = 3 ; but specifically if the bi.biWidth is 3 we need to add 3 bytes.
+11. fseek skips over any padding and looks for the next pixel.
+12. SEEK_CUR is the cuurent position indicator in the file. 
